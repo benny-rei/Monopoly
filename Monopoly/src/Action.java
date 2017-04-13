@@ -1,5 +1,5 @@
 
-public class Action implements Field {
+public class Action extends Field {
 
 	@Override
 	public void interact(Player player, Interaction interaction) {

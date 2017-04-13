@@ -1,6 +1,9 @@
 
-public interface Field {
+public abstract class Field {
 	
-	public void interact(Player player, Interaction interaction)	
+	public enum Interaction{};
+	
+	public void interact(Player player, Interaction interaction) {
+	}	
 	
 }

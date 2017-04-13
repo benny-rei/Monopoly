@@ -1,5 +1,5 @@
 
-public class FreeParking implements Field {
+public class FreeParking extends Field {
 
 	@Override
 	public void interact(Player player, Interaction interaction) {

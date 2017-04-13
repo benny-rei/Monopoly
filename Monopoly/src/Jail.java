@@ -1,5 +1,5 @@
 
-public class Jail implements Field {
+public class Jail extends Field {
 
 	@Override
 	public void interact(Player player, Interaction interaction) {

@@ -1,5 +1,8 @@
+import java.util.ArrayList;
 
 public class Player {
+	
+	public enum Interaction{};
 	
 	private String name;
 	private int bankBalance;

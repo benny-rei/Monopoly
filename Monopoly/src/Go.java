@@ -1,5 +1,5 @@
 
-public class Go implements Field {
+public class Go extends Field {
 
 	@Override
 	public void interact(Player player, Interaction interaction) {
