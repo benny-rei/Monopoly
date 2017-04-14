@@ -8,7 +8,7 @@ public class Estate extends Property {
 	
 	
 	
-	public Estate(String label, Color group, Player owner, int value, int[] rents, boolean mortgage, int house_price,
+	public Estate(String label, int group, Player owner, int value, int[] rents, boolean mortgage, int house_price,
 			int hotel_price, int houese_amount) {
 		super(label, group, owner, value, rents, mortgage);
 		this.house_price = house_price;

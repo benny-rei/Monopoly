@@ -2,16 +2,23 @@
 public class Game {
 	
 	private Player[] players;
-	private Board board;
+	private static Board board;
 	private Dice[] dices;
 	
 	
-	
-	public Game(Player[] players, Board board, Dice[] dices) {
-		super();
-		this.players = players;
-		this.board = board;
-		this.dices = dices;
+	public static void main(String[] args) {	
+		
+		/**
+		 * 1. player erstellen
+		 * 2. board füllen
+		 * 3. 
+		 * 
+		 */
+		
+		
+		board = new Board();
+		board.fillBoard();
+		
 	}
 	
 	

@@ -8,10 +8,9 @@ public class Board {
 	
 	
 	
-	public Board(Type type, Field[] fields) {
+	public Board() {
 		super();
-		this.type = type;
-		this.fields = fields;
+		
 	}
 
 	
@@ -40,7 +39,7 @@ public class Board {
 
 
 
-	public void fillBoards(){
+	public void fillBoard(){
 		
 		fields[0] = new Go();
 		
