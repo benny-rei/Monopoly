@@ -6,22 +6,24 @@ public class Jail extends Field {
 
 	
 	
-	public Jail(ArrayList<Player> prisoners) {
+	public Jail() {
 		super();
-		this.prisoners = prisoners;
 	}
 
 	
-
+/*
 	public ArrayList<Player> getPrisoners() {
 		return prisoners;
 	}
 
-	public void setPrisoners(ArrayList<Player> prisoners) {
-		this.prisoners = prisoners;
+	public void addPrisoner(Player prisoner) {
+		this.prisoners.add(prisoner);
 	}
-
-
+	
+	public void removePrisoner(Player prisoner){
+		this.prisoners.remove(prisoner);
+	}
+*/
 
 	@Override
 	public void interact(Player player, Interaction interaction) {

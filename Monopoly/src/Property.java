@@ -1,10 +1,10 @@
 
 public class Property extends Field {
 
-	public enum Group {};
 	
 	private String label;
-	private Group group;
+	// 0 für Flughafen
+	private int group;
 	private Player owner;
 	private int value;
 	private int[] rents;
@@ -13,7 +13,7 @@ public class Property extends Field {
 	
 	
 	
-	public Property(String label, Group group, Player owner, int value, int[] rents, boolean mortgage) {
+	public Property(String label, int group, Player owner, int value, int[] rents, boolean mortgage) {
 		this.label = label;
 		this.group = group;
 		this.owner = owner;
@@ -39,14 +39,14 @@ public class Property extends Field {
 
 
 
-	public Group getGroup() {
+	public int getGroup() {
 		return group;
 	}
 
 
 
 
-	public void setGroup(Group group) {
+	public void setGroup(int group) {
 		this.group = group;
 	}
 
