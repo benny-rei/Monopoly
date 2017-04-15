@@ -8,6 +8,7 @@ public class Game {
 	private final static int startkapital = 500;
 	private static int anzahl;
 	private static int aktiverSpieler;
+	private static int aktuellesFeld;
 
 	private static int pasch = 0;
 
@@ -29,6 +30,8 @@ public class Game {
 
 		board = new Board();
 		board.fillBoard();
+		
+		aktuellesFeld = 0;
 
 		while (true) {
 
@@ -37,22 +40,27 @@ public class Game {
 			// 1. Würfeln
 
 			int wuerfel = Dice.rollDice();
-			if ((wuerfel == 0) && (pasch < 3)) {
-				System.out.println("Sie haben einen Pasch gewürfelt");
-				pasch++;
-
-			} else {
-
-				pasch = 0;
-				if (players[aktiverSpieler].getPosition() == 10) {
-					players[aktiverSpieler].setPosition(10); // ins gefängnis gehen
-					AktiverSpielerAendern();
-				}
-				continue;
+			
+			// TODO:
+			// wenn im Gefängnis
+			// dann ....
+			// 
+			// wenn über go dann
+			//
+			//
+			 
+			if(wuerfel == 0){
+				players[aktiverSpieler].GoToPrison();
+				System.out.println("Pasche gewürfelt ... ab ins Gefängnis");
+			}
+			
+			if(aktuellesFeld == 10){
 				
 			}
-
-			System.out.println("Was wollen Sie machen?");
+			
+			// Feldspezifisches Interact aufrufen
+			board.getFields()[players[aktiverSpieler].getPosition()].interact(players[aktiverSpieler], 0);
+			
 
 			// ende --- aktiven Spieler bestimmen
 			AktiverSpielerAendern();

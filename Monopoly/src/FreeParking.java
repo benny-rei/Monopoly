@@ -8,7 +8,7 @@ public class FreeParking extends Field {
 	}
 
 	@Override
-	public void interact(Player player, Interaction interaction) {
+	public void interact(Player player, int wuerfelZahl) {
 		// TODO Auto-generated method stub
 		
 	}

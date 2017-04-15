@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class Jail extends Field {
+	
 
 	private ArrayList<Player> prisoners;
 
@@ -26,9 +27,10 @@ public class Jail extends Field {
 */
 
 	@Override
-	public void interact(Player player, Interaction interaction) {
-		// TODO Auto-generated method stub
+	public void interact(Player player, int wuerfelZahl) {
 		
+		
+
 	}
 
 }

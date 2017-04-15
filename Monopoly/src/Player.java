@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
+
 public class Player {
 	
-	public enum Interaction{};
 	
 	private String name;
 	private int bankBalance;
@@ -24,16 +24,23 @@ public class Player {
 		this.property = property;
 	}
 
+	
+	public void addMoney(int amount){
+		bankBalance += amount;
+	}
 
-
-
+	public void removeMoney(int amount){
+		bankBalance -= amount;
+	}
 
 	public String getName() {
 		return name;
 	}
 
 
-
+	public void removeCard(ActionCard card){
+		actionCards.remove(card);
+	}
 
 
 	public void setName(String name) {
@@ -68,12 +75,17 @@ public class Player {
 
 
 
-	public void setPosition(int position) {
-		this.position = position;
+	public void setPosition(int wuerfelZahl) {
+		int positionAnfang = position;
+		position = (position+wuerfelZahl)%40;
+		if((positionAnfang+wuerfelZahl) > 40) addMoney(200);
+		
 	}
 
 
-
+	public void GoToPrison(){
+		this.position = 10;
+	}
 
 
 	public ArrayList<ActionCard> getActionCards() {
@@ -82,15 +94,15 @@ public class Player {
 
 
 
-
-
-	public void setActionCards(ArrayList<ActionCard> actionCards) {
-		this.actionCards = actionCards;
+	public void addActionCard(ActionCard card){
+		actionCards.add(card);
 	}
 
-
-
-
+	
+	public void KarteEntfernen(ActionCard card){
+		actionCards.remove(card);
+	}
+	
 
 	public ArrayList<Property> getProperty() {
 		return property;
@@ -105,11 +117,4 @@ public class Player {
 	}
 
 
-
-
-
-	public void interact(Field field, Interaction interaction){
-		
-	}
-	
 }
