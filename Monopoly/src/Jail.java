@@ -29,8 +29,8 @@ public class Jail extends Field {
 	@Override
 	public void interact(Player player, int wuerfelZahl) {
 		
-		
-
+		System.out.println("Du bist jetzt im Gefängnis");
 	}
 
+	
 }

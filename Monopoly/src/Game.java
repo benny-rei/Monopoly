@@ -39,6 +39,10 @@ public class Game {
 
 			// 1. Würfeln
 
+			System.out.println("Was wollen sie machen?");
+			System.out.println("1. Würfeln");
+			System.out.println("2. Karte spielen");
+			
 			int wuerfel = Dice.rollDice();
 			
 			// TODO:
@@ -55,8 +59,14 @@ public class Game {
 			}
 			
 			if(aktuellesFeld == 10){
-				
+				boolean pasch = Dice.paschWuerfeln();
+				if(!pasch) AktiverSpielerAendern();
+				continue;
 			}
+
+			
+			
+			
 			
 			// Feldspezifisches Interact aufrufen
 			board.getFields()[players[aktiverSpieler].getPosition()].interact(players[aktiverSpieler], 0);
