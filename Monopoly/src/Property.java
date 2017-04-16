@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Property extends Field {
 
@@ -111,7 +112,37 @@ public class Property extends Field {
 
 	@Override
 	public void interact(Player player, int wuerfelZahl) {
-		// TODO Auto-generated method stub
+		
+		int feld = Game.getAktuellesFeld();
+		Scanner scanner = new Scanner(System.in);
+		
+		// überprüfen ob alle Gebäude der gleichen Farbe im Besitz des aktuellen Spielers sind
+		if(Game.getBoard().getFields()[feld].getHouseAmount() == 0){
+			System.out.println("Dieses Feld is leer, wollen Sie es kaufen? [j,n]");
+			String answer = scanner.nextLine();
+			if(answer.toLowerCase().equals("j")){
+				Game.getBoard().getFields()[feld].addHouseAmount();
+			}
+		}else if (!Game.getBoard().getFields()[feld].getOwner().equals(player)) {
+			Game.getBoard().getFields()[feld].getOwner().addMoney(Game.getBoard().getFields()[feld].getRent());
+			System.out.println("Sie müssen "+Game.getBoard().getFields()[feld].getRent()+" an "+Game.getBoard().getFields()[feld].getOwner().getName()+" zahlen");
+		}else{
+			boolean besitztAlle = true;
+			for(int i = 0; i<=40; i++) {
+				if(Game.getBoard().getFields()[feld].getGroup() == this.group){
+					if(Game.getBoard().getFields()[feld].getOwner().equals(player)){
+						besitztAlle=false;
+						break;
+					}
+					
+				}
+			}
+			Game.getBoard().getFields()[feld].addHouseAmount();
+			System.out.println("das Haus wurde gekauft");
+			
+		}
+		
+				
 		
 	}
 	

@@ -32,6 +32,9 @@ public class Action extends Field {
 		if(karte.isSofortZahlen()) player.removeMoney(karte.getAmountToPay());
 		else player.addActionCard(karte);
 		
+		// Karte aus der Liste nehmen und wieder an den Anfang der Liste hängen
+		cardList.remove(karte);
+		cardList.add(0, karte);
 		
 	}
 
